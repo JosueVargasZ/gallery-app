@@ -1,0 +1,73 @@
+//==================== Global variables ====================
+
+//==================== Color variables ====================
+$gradient: linear-gradient(30deg, #00A1BA, #00B8BA, #31CEAE, #74E099, #B5EF81, #F9F871 );
+
+$colorPalette : (
+    'primary' : #00A1BA,
+    'secondary': #005B8F,
+    'bg': #E6F4F1,
+    'bg-secondary': #BFD6D9,
+    'bg-dark': #434343,
+    'text-color': #434343
+);
+
+//==================== Size variables ====================
+$lg-phone: 425px;
+$tablet: 768px;
+$desktop: 1024px;
+$lg-desktop: 1370px;
+
+//==================== Functions ====================
+
+// This function get the color of the map $lightPalette
+@function setColor( $color ){
+    @return map-get($colorPalette , $color ) 
+};
+
+//==================== Mixins ====================
+
+// Mixin for styling buttons
+@mixin buttons {
+    background-color: setColor(secondary);
+    font-weight: 800;
+    color: setColor(bg-secondary);
+    padding: 0.75rem 1.225rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 400ms ease-in-out;
+    &:focus,
+    &:hover{
+        background-color: lighten(setColor( secondary),15);
+    }
+    
+}
+
+// Mixin for Media Queries
+@mixin media( $size ) {
+    @media only screen and (min-width: $size ){
+        @content;
+    }
+}
+
+// Helper classes
+
+.fadeIn{
+    animation: fade-in 400ms ease-in-out forwards;
+}
+
+.active{
+    color: setColor(secondary) !important;
+}
+
+.link{
+    color: setColor(accent) !important;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: color 400ms ease-in-out;
+
+    &:hover{
+        color: setColor(secondary) !important;
+    }
+}

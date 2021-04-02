@@ -1,0 +1,125 @@
+/*==================== Animations ====================*/
+@use '../utilities/helpers.scss' as helpers;
+
+//==================== Menu animations ====================
+
+@keyframes gradient-in {
+    0%{
+       background-position: 5%;
+    }
+    50%{
+        background-position: 90%;
+    }
+    100%{
+        background-position: 60%;
+    }
+}
+
+@keyframes blink {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes menu-in {
+    from{
+        // transform: translatey(-192px);
+        top: -30px;
+        visibility: hidden;
+    }
+    to{
+        // transform: translatey(0px);
+        top: 70px;
+        visibility: visible;
+    }
+}
+
+@keyframes menu-out {
+    from{
+        // transform: translatey(0px);
+        top: 70px;
+        visibility: visible;
+    }
+    to{
+        // transform: translatey(-192px);
+        top: -30px;
+        visibility: hidden;
+    }
+}
+
+@keyframes popup-alert {
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    50%{
+        opacity: 0.50;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popout-alert {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    50%{
+        opacity: 0.50;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+@keyframes from-bottom {
+    from{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes shake {
+    0%,50%{
+        transform: rotate(-15deg);
+    }
+    25%,75%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+

@@ -1,10 +1,16 @@
 import React from 'react';
+import { Container } from './components/Container';
+import { Navbar } from './components/Navbar';
+import { SideBar } from './components/SideBar';
 
 export const GalleryApp = () => {
     return (
         <div>
-            <h1>GalleryApp</h1>
-            <p>I'm gonna build something beautiful</p>
+            <Navbar />
+            <div style={{marginTop: '70px'}}>
+                <SideBar />
+                <Container />
+            </div>
         </div>
     )
 }

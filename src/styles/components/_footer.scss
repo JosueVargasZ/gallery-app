@@ -1,0 +1,11 @@
+@use '../utilities/helpers' as helpers;
+
+.footer{
+    background-color: helpers.setColor(bg-secondary);
+    padding: 2rem 0.50rem 2rem 0.50rem;
+
+    &__title{
+        text-align: center;
+        letter-spacing: 1.3px;
+    }
+}

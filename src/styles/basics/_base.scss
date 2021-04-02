@@ -1,0 +1,30 @@
+@use '../utilities/helpers' as helpers;
+
+/*==================== General styling====================*/
+
+/*==================== Import fonts====================*/
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&display=swap');
+/*==================== Global ====================*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: helpers.setColor(text-color);
+}
+
+html{
+    scroll-behavior: smooth;
+    background-color: helpers.setColor(bg);
+}
+
+h1,
+h2,
+h3{
+    font-family: 'Domine', serif;
+    // color: helpers.setColor(primary);
+}
+
+a{
+    text-decoration: none;
+}
