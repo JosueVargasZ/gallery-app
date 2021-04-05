@@ -15,6 +15,14 @@
     justify-content: space-between;
     padding: 0 0.50rem;
 
+    @include helpers.media(helpers.$desktop){
+        padding-left: 4rem;
+    }
+
+    @include helpers.media(helpers.$lg-desktop){
+        padding-left: 5rem;
+    }
+
 
     &__menu-toggle{
         position: relative;
@@ -76,7 +84,7 @@
             }
         }
 
-        @include helpers.media(helpers.$tablet){
+        @include helpers.media(helpers.$desktop){
             display: none;
         }
     }

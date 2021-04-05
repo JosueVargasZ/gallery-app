@@ -28,3 +28,14 @@ h3{
 a{
     text-decoration: none;
 }
+
+.gallery{
+    padding-top: 70px;
+    height: 100vh;
+    position: relative;
+
+    @include helpers.media(helpers.$desktop){
+        display: flex;
+        flex-direction: row;
+    }
+}

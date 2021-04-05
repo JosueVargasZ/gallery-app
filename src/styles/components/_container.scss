@@ -1,0 +1,11 @@
+@use '../utilities/helpers' as helpers;
+
+.container{
+    padding: 2rem;
+    height: 100%;
+    overflow: scroll;
+
+    @include helpers.media(helpers.$desktop){
+        flex-basis: 80%;
+    }
+}

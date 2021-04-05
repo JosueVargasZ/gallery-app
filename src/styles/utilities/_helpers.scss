@@ -6,6 +6,7 @@ $gradient: linear-gradient(30deg, #00A1BA, #00B8BA, #31CEAE, #74E099, #B5EF81, #
 $colorPalette : (
     'primary' : #00A1BA,
     'secondary': #005B8F,
+    'accent': #B5EF81,
     'bg': #E6F4F1,
     'bg-secondary': #BFD6D9,
     'bg-dark': #434343,
@@ -39,7 +40,7 @@ $lg-desktop: 1370px;
     transition: background 400ms ease-in-out;
     &:focus,
     &:hover{
-        background-color: lighten(setColor( secondary),15);
+        background-color: lighten(setColor( secondary ),15);
     }
     
 }
