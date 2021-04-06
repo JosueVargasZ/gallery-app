@@ -14,6 +14,17 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 0.50rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.070);
+    // box-shadow:
+    //     0 0.8px 2.2px -9px rgba(0, 0, 0, 0.074),
+    //     0 2.6px 4.7px -9px rgba(0, 0, 0, 0.089),
+    //     0 6.7px 8.3px -9px rgba(0, 0, 0, 0.101),
+    //     0 20px 21px -9px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 0.8px 2.1px -9px rgba(0, 0, 0, 0.074),
+        0 2px 4.5px -9px rgba(0, 0, 0, 0.089),
+        0 3.9px 7.9px -9px rgba(0, 0, 0, 0.101),
+        0 10px 20px -9px rgba(0, 0, 0, 0.15);
 
     @include helpers.media(helpers.$desktop){
         padding-left: 4rem;

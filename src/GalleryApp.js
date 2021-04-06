@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container } from './components/Container';
+import { Menu } from './components/Menu';
 import { Navbar } from './components/Navbar';
+import { Profile } from './components/Profile';
 import { SideBar } from './components/SideBar';
 
 
@@ -19,7 +21,10 @@ export const GalleryApp = () => {
     return (
         <div className="gallery" >
             <Navbar toggleMenu={ toggleMenu } setToggleMenu={ setToggleMenu }/>
-            <SideBar toggleMenu={ toggleMenu }/>
+            <SideBar toggleMenu={ toggleMenu }>
+                <Profile />
+                <Menu />
+            </SideBar>
             <Container />
         </div>
     )
