@@ -1,0 +1,58 @@
+@use '../utilities/helpers' as helpers;
+
+.card{
+    max-width: 400px;
+    max-height: fit-content;
+    position: relative;
+
+    &__image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__options{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        
+        
+        &__menu{
+            width: 100%;
+            height: 50px;
+            padding: 0.50rem;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.4),rgba(0,0,0,0.3),rgba(0,0,0,0.2), rgba(0,0,0,0.1), rgba(0,0,0,0.0) );
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+
+        }
+
+        &:hover{
+            opacity: 0.7;
+        }
+
+        &__btn{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: transform 300ms ease-in-out;
+            &>i{
+                color: #ffffff;
+                font-size: 1.05rem;
+            }
+
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
