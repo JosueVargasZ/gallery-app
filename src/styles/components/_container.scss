@@ -3,20 +3,27 @@
 .container{
     padding: 2rem;
     height: 100%;
-    overflow-y: scroll;
+    // width: 100%;
+    // overflow-y: scroll;
+    transition: margin 300ms ease-in-out;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
     
-    @include helpers.media(helpers.$tablet){
+    @include helpers.media(helpers.$lg-phone){
         grid-template-columns: repeat(2, 1fr);
-        
+    }
+
+    @include helpers.media(helpers.$tablet){
+        grid-template-columns: repeat(3, 1fr);
     }
     
     @include helpers.media(helpers.$desktop){
-        flex-basis: 80%;
-        grid-template-columns: repeat(3, 1fr);
+        // grid-template-columns: repeat(3, 1fr);
+        margin-left: 270px;
     }
 }

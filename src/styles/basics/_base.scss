@@ -31,11 +31,11 @@ a{
 
 .gallery{
     padding-top: 70px;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
 
-    @include helpers.media(helpers.$desktop){
-        display: flex;
-        flex-direction: row;
-    }
+    // @include helpers.media(helpers.$desktop){
+    //     display: flex;
+    //     flex-direction: row;
+    // }
 }

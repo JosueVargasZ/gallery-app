@@ -23,6 +23,9 @@ export const Container = () => {
             <MediaCard />
             <MediaCard />
             <MediaCard />
+            <MediaCard />
+            <MediaCard />
+            <MediaCard />
         </main>
     )
 }

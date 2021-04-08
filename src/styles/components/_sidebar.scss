@@ -3,12 +3,12 @@
 .sidebar{
     background-color: helpers.setColor( bg-secondary );
     z-index: 2;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 70px;
     bottom: 0;
-    // right: 50%;
-    min-width: 270px;
+    width: 270px;
+    // max-width: 300px;
     transition: transform 300ms ease-in-out;
     display: flex;
     flex-direction: column;
@@ -18,11 +18,11 @@
         margin: 1rem 0;
     }
 
-    @include helpers.media(helpers.$desktop){
-        position: static;
-        height: 100%;
-        flex-basis: 20%;
-    }
+    // @include helpers.media(helpers.$desktop){
+    //     // position: fixed;
+    //     // height: 100%;
+    //     // flex-basis: 20%;
+    // }
 
     &__profile{
         height: 100px;
