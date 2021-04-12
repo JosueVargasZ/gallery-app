@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 export const Navbar = ({ toggleMenu, setToggleMenu }) => {
-
-    // const [toggleMenu, setToggleMenu] = useState(false);
 
     useEffect(() => {
         
@@ -19,18 +17,6 @@ export const Navbar = ({ toggleMenu, setToggleMenu }) => {
             window.removeEventListener('resize',window);
         }
     }, [setToggleMenu])
-
-    // const handleToggle = () => {
-    //     setToggleMenu( toggle => !toggle );
-        
-    //     // if( toggleMenu) {
-    //     //     menu.current.style = 'animation: menu-out 200ms ease-in-out forwards';
-    //     // } else{
-    //     //     menu.current.style = 'animation: menu-in 200ms ease-in-out forwards';
-    //     // }
-    // }
-
-
 
     return (
         <nav className="navbar">

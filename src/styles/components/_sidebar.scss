@@ -55,7 +55,7 @@
             border-top: 1px solid helpers.setColor(bg);
             &:focus,
             &:hover{
-                color: helpers.setColor(secondary);
+                color: helpers.setColor(primary);
             }
         }
 
