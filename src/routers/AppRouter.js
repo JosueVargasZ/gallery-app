@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { LoginScreen } from "../components/auth/LoginScreen";
 import { RegisterScreen } from "../components/auth/RegisterScreen";
-import { Gallery } from "../components/Gallery";
+import { GalleryScreen } from "../components/GalleryScreen";
 
 export const AppRouter = () => {
 
@@ -15,7 +15,7 @@ export const AppRouter = () => {
         <Router>
             <div>
             <Switch>
-                <Route exact path="/" component={  Gallery }/>
+                <Route exact path="/" component={  GalleryScreen }/>
                 <Route exact path="/auth/login" component={ LoginScreen }/>
                 <Route exact path="/auth/register" component={ RegisterScreen }/>
                 

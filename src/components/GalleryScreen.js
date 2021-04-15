@@ -15,7 +15,7 @@ const initialState = () => {
     }
 }
 
-export const Gallery = () => {
+export const GalleryScreen = () => {
 
     const [toggleMenu, setToggleMenu] = useState(initialState);
 
