@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
+import { useAuth } from '../context/AuthProvider';
+import { signOut } from '../firebase/firebase-helper';
 
 export const Navbar = ({ toggleMenu, setToggleMenu }) => {
+
+    const { authDispatch } = useAuth();
 
     useEffect(() => {
         
@@ -17,6 +21,12 @@ export const Navbar = ({ toggleMenu, setToggleMenu }) => {
             window.removeEventListener('resize',window);
         }
     }, [setToggleMenu])
+
+
+    const handleLogout = () => {
+        signOut(authDispatch);
+
+    }
 
     return (
         <nav className="navbar">
@@ -35,7 +45,8 @@ export const Navbar = ({ toggleMenu, setToggleMenu }) => {
             <h2 className="navbar__logo">GalleryApp</h2>
             <button 
                 className="navbar__logout"
-                tabIndex="0">Log out</button>
+                tabIndex="0"
+                onClick={ handleLogout }>Log out</button>
         </nav>
     )
 }

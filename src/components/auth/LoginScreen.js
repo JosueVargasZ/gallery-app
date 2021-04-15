@@ -1,9 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthProvider';
+import { signInWithGoogle } from '../../firebase/firebase-helper';
 import { useForm } from '../../hooks/useForm';
 
 export const LoginScreen = () => {
     
+
+    const { authDispatch } = useAuth();
 
     const loginRef = useRef(null);
 
@@ -33,10 +37,22 @@ export const LoginScreen = () => {
         e.preventDefault();
         
         // dispatch( startLoginEmailPassword(email, password ) );
+        
     }
 
     const handleGoogleLogin = () => {
-        // dispatch( startGoogleLogin() );
+
+        signInWithGoogle()
+            .then( ({uid, displayName, photoURL}) =>{
+                authDispatch({
+                    type: 'login',
+                    payload: {
+                        uid,
+                        displayName,
+                        photoURL
+                    }
+                })
+            })
     }
 
     return (
