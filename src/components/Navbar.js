@@ -8,17 +8,19 @@ export const Navbar = ({ toggleMenu, setToggleMenu }) => {
 
     useEffect(() => {
         
-        window.addEventListener('resize', () =>{
+        const winListener = () => {
             if( window.innerWidth >= 1024){
                 setToggleMenu(true)
             }
             else{
                 setToggleMenu(false);
             }
-        });
+        }
+
+        window.addEventListener('resize', winListener );
 
         return () => {
-            window.removeEventListener('resize',window);
+            window.removeEventListener('resize',winListener);
         }
     }, [setToggleMenu])
 
