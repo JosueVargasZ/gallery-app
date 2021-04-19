@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthProvider';
+import { RegisterWithEmailPassName } from '../../firebase/firebase-helper';
 
 import { useForm } from '../../hooks/useForm';
 
@@ -25,11 +27,13 @@ export const RegisterScreen = () => {
     
     
     const initialValue = {
-        name: 'josue',
-        email: 'josue@gmail.com',
+        name: '',
+        email: '',
         password: '',
         password2: ''
     }
+
+    const { authDispatch } = useAuth();
     
     const [ formValues, handleInputChange ] = useForm( initialValue );
     
@@ -47,7 +51,18 @@ export const RegisterScreen = () => {
             return;
         }
 
-        // dispatch( startRegisterWithEmailPasswordName(email, password, name ) );
+        RegisterWithEmailPassName(email, password, name ).then( ({uid, displayName, photoURL}) => {
+            authDispatch({
+                type: 'login',
+                payload: {
+                    uid,
+                    displayName,
+                    photoURL
+                }
+            })
+        })
+        .catch( (e) => {
+        }) 
     }
 
     return (

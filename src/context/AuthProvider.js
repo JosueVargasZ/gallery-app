@@ -20,10 +20,10 @@ const authReducer = (state, action) => {
 // Component for providing the context and nesting the application 
 export const AuthProvider = ({ children }) => {
 
-    const [user, authDispatch] = useReducer(authReducer, {})
+    const [state, dispatch] = useReducer(authReducer, {})
 
     return (
-        <AuthContext.Provider value={{ user, authDispatch }} >
+        <AuthContext.Provider value={{ user: state, authDispatch: dispatch }} >
             {children}
         </AuthContext.Provider>
     )

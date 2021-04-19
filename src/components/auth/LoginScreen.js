@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthProvider';
-import { signInWithGoogle } from '../../firebase/firebase-helper';
+import { signInWithEmailPass, signInWithGoogle } from '../../firebase/firebase-helper';
 import { useForm } from '../../hooks/useForm';
 
 export const LoginScreen = () => {
@@ -25,8 +25,8 @@ export const LoginScreen = () => {
     
 
     const initialValue = {
-        email: 'josue@gmail.com',
-        password: '123456'
+        email: '',
+        password: ''
     }
 
     const [ formValues, handleInputChange ] = useForm( initialValue );
@@ -36,7 +36,19 @@ export const LoginScreen = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         
-        // dispatch( startLoginEmailPassword(email, password ) );
+        signInWithEmailPass(email,password)
+        .then( ({uid, displayName, photoURL}) =>{
+            authDispatch({
+                type: 'login',
+                payload: {
+                    uid,
+                    displayName,
+                    photoURL
+                }
+            })
+        })
+        .catch( e => {
+        })
         
     }
 
@@ -52,6 +64,9 @@ export const LoginScreen = () => {
                         photoURL
                     }
                 })
+            })
+            .catch( e => {
+
             })
     }
 

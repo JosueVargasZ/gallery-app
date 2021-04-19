@@ -42,7 +42,7 @@ export const AppRouter = () => {
             setChecking(false);
         });
         
-    }, [])
+    }, [authDispatch])
 
 
     if( checking ){
