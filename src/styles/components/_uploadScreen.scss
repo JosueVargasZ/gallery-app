@@ -1,0 +1,33 @@
+@use '../utilities/helpers' as helpers;
+
+.upload-screen{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &>*{
+        margin-bottom: 1rem;
+    }
+
+    &__title{
+        margin: 1rem 0 2rem 0;
+    }
+
+    &__custom-file{
+        visibility: hidden;
+        
+        &::before{
+            visibility: visible;
+            display: block;
+            content: 'Select file';
+            @include helpers.buttons;
+            text-align: center;
+
+        }
+    }
+
+    &__bar{
+        appearance: none;
+    }
+}

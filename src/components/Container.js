@@ -1,23 +1,14 @@
 import React from 'react';
-import { MediaCard } from './MediaCard';
+
+import { UploadContentScreen } from './UploadContentScreen';
+// import { MainGalleryScreen } from './MainGalleryScreen';
 
 export const Container = () => {
     return (
         <main className="container">
 
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
-            <MediaCard />
+            {/* <MainGalleryScreen /> */}
+            <UploadContentScreen />
         </main>
     )
 }

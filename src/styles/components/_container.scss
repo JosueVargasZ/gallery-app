@@ -2,25 +2,12 @@
 
 .container{
     padding: 2rem;
-    height: 100%;
+    min-height: calc(100vh - 70px);
     // width: 100%;
     // overflow-y: scroll;
     transition: margin 300ms ease-in-out;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
     
-    @include helpers.media(helpers.$lg-phone){
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include helpers.media(helpers.$tablet){
-        grid-template-columns: repeat(3, 1fr);
-    }
     
     @include helpers.media(helpers.$desktop){
         // grid-template-columns: repeat(3, 1fr);
