@@ -23,8 +23,18 @@
             content: 'Select file';
             @include helpers.buttons;
             text-align: center;
-
+            
         }
+        
+        &:focus,
+        &:hover{
+
+            &::before{
+                background-color: lighten(helpers.setColor( secondary ),15);
+            }
+        }
+
+
     }
 
     &__bar{
