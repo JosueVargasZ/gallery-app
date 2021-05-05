@@ -57,6 +57,10 @@
             &:hover{
                 color: helpers.setColor(primary);
             }
+            
+            &--active{
+                color: helpers.setColor(primary);
+            }
         }
 
         &:last-child{

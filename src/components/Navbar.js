@@ -1,19 +1,22 @@
 import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthProvider';
+import { useUI } from '../context/UIProvider';
 import { signOut } from '../firebase/firebase-helper';
 
-export const Navbar = ({ toggleMenu, setToggleMenu }) => {
+export const Navbar = () => {
 
     const { authDispatch } = useAuth();
+    const { ui, uiDispatch } = useUI();
+    const { toggleMenu } = ui;
 
     useEffect(() => {
         
         const winListener = () => {
             if( window.innerWidth >= 1024){
-                setToggleMenu(true)
+                uiDispatch({ type: 'menu-toggle-show'});
             }
             else{
-                setToggleMenu(false);
+                uiDispatch({ type: 'menu-toggle-hide'});
             }
         }
 
@@ -22,7 +25,7 @@ export const Navbar = ({ toggleMenu, setToggleMenu }) => {
         return () => {
             window.removeEventListener('resize',winListener);
         }
-    }, [setToggleMenu])
+    }, [])
 
 
     const handleLogout = () => {
@@ -38,8 +41,8 @@ export const Navbar = ({ toggleMenu, setToggleMenu }) => {
                     className="menu-toggle__check" 
                     type="checkbox"
                     tabIndex="0"
-                    checked={ toggleMenu} 
-                    onChange={ ()=> { setToggleMenu( toggle => !toggle ) }  } 
+                    checked={ toggleMenu } 
+                    onChange={ ()=> { uiDispatch({ type: 'menu-toggle'}); }  } 
                     />
                 <span className="menu-toggle__toggler">
                 </span>
