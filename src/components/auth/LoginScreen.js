@@ -23,7 +23,7 @@ export const LoginScreen = () => {
             loginRef.current.style = 'animation: left-in 400ms ease-in-out forwards';
         }
 
-    }, [])
+    }, [uiDispatch, firstLoginRender])
 
     
 

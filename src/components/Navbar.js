@@ -25,7 +25,7 @@ export const Navbar = () => {
         return () => {
             window.removeEventListener('resize',winListener);
         }
-    }, [])
+    }, [uiDispatch])
 
 
     const handleLogout = () => {

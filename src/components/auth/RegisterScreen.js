@@ -26,7 +26,7 @@ export const RegisterScreen = () => {
         registerRef.current.style = 'animation: right-in 400ms ease-in-out forwards';
         }
 
-    }, [])
+    }, [uiDispatch, firstLoginRender])
     
     
     const initialValue = {
