@@ -1,24 +1,27 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthProvider';
+import { useUI } from '../../context/UIProvider';
 import { signInWithEmailPass, signInWithGoogle } from '../../firebase/firebase-helper';
 import { useForm } from '../../hooks/useForm';
 
 export const LoginScreen = () => {
     
 
+    const { ui, uiDispatch } = useUI();
+    const { firstLoginRender } = ui;
     const { authDispatch } = useAuth();
 
     const loginRef = useRef(null);
 
     useEffect(() => {
         
-        // if( firstLoginRender ){
-        //     loginRef.current.style = 'animation: fade-in 400ms ease-in-out forwards';
-        //     dispatch( FinishFirstLoginRender() );
-        // } else{
+        if( firstLoginRender ){
+            loginRef.current.style = 'animation: fade-in 400ms ease-in-out forwards';
+            uiDispatch({type: 'login-next-render'});
+        } else{
             loginRef.current.style = 'animation: left-in 400ms ease-in-out forwards';
-        // }
+        }
 
     }, [])
 

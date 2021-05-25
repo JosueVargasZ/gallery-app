@@ -1,12 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthProvider';
+import { useUI } from '../../context/UIProvider';
 import { RegisterWithEmailPassName } from '../../firebase/firebase-helper';
 
 import { useForm } from '../../hooks/useForm';
 
 export const RegisterScreen = () => {
-    
+
+    const { ui, uiDispatch } = useUI();
+    const { firstLoginRender } = ui;
 
     const registerRef = useRef(null);
     const pass2Ref = useRef(null);
@@ -16,12 +19,12 @@ export const RegisterScreen = () => {
 
     useEffect(() => {
 
-        // if( firstLoginRender ){
-        //     registerRef.current.style = 'animation: fade-in 400ms ease-in-out forwards';
-        //     dispatch( FinishFirstLoginRender() );
-        // } else{
+        if( firstLoginRender ){
+            registerRef.current.style = 'animation: fade-in 400ms ease-in-out forwards';
+            uiDispatch({type: 'login-next-render'});
+        } else{
         registerRef.current.style = 'animation: right-in 400ms ease-in-out forwards';
-        // }
+        }
 
     }, [])
     

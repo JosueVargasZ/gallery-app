@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useUI } from '../context/UIProvider';
 
 import { Container } from './Container';
 import { Menu } from './Menu';
@@ -7,6 +8,13 @@ import { Profile } from './Profile';
 import { SideBar } from './SideBar';
 
 export const GalleryScreen = () => {
+
+
+    const { uiDispatch } = useUI();
+
+    useEffect(() => {
+        uiDispatch({type: 'login-first-render'});
+    }, [])
 
     return (
         <div className="gallery" >
