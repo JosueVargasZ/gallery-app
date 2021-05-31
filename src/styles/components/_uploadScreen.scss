@@ -37,6 +37,10 @@
 
     }
 
+    &__upload{
+        @include helpers.buttons;
+    }
+
     &__bar{
         appearance: none;
     }

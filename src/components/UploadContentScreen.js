@@ -2,26 +2,23 @@ import React, { useRef, useState } from 'react'
 
 export const UploadContentScreen = () => {
 
+    const [isFileSelected, setIsFileSelected] = useState(false);
     const fileRef = useRef(null);
     const picRef = useRef(null);
-    const [file, setFile] = useState({});
-    const imageReader = new FileReader();
-
+    
     const onSelectedFile = () => {
         
-        // ===WORKING ON THIS READER FOR SHOWING THE PICTURE BEFORE LOADING IT===
-
-        console.log(fileRef.current.files[0]);
-        setFile(fileRef.current.files[0]);
+        const imageReader = new FileReader();
         
         imageReader.onloadend = ()=> {
             picRef.current.src = imageReader.result;
         }
         
-        if(fileRef.current){
+        if(fileRef.current.files[0]){
             imageReader.readAsDataURL(fileRef.current.files[0]);
-        } else {
-            picRef.current.src = '';
+            setIsFileSelected(true);
+        }else {
+            setIsFileSelected(false);
         }
 
     }
@@ -31,11 +28,11 @@ export const UploadContentScreen = () => {
             <h1 className="upload-screen__title">Upload a picture</h1>
             <input className="upload-screen__custom-file" type="file" accept="image/*" ref={fileRef} onChange={onSelectedFile}/>
             {
-                (file) &&
+                (isFileSelected) &&
                 (
                     <>
                         <img ref={picRef} src='' alt='' style={{width: '50%'}} />
-                        <span>{file.name}</span>
+                        <button className="upload-screen__upload">upload</button>
                     </>
                 )
             }
